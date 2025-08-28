@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="testNG.parameterTask"/>
+      <parameter name="firstname" value="Raja">
+      </parameter>
+      <parameter name="lastname" value="Pandi">
+      </parameter>
+      <parameter name="address" value="Chennai">
+      </parameter>
+      <parameter name="email" value="pandi2002ragav@gmail.com">
+      </parameter>
+      <parameter name="phone" value="9361115851">
+      </parameter>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

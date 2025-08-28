@@ -1,0 +1,52 @@
+package selenium_demo;
+
+import java.nio.channels.GatheringByteChannel;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Registration_Demo1 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver wd=new ChromeDriver();
+		wd.get("https://demoqa.com/automation-practice-form");
+		wd.manage().window().maximize();
+//		Thread.sleep(1500);
+//		
+//		wd.findElement(By.id("firstName")).click();
+//		wd.findElement(By.id("firstName")).sendKeys("Raju");
+//		Thread.sleep(1500);
+//		
+//		wd.findElement(By.id("firstName")).clear();
+//		Thread.sleep(1500);
+//		wd.findElement(By.id("firstName")).sendKeys("Raja P");
+//		Thread.sleep(1500);
+		
+		WebElement we=wd.findElement(By.id("firstName"));
+		we.click();
+		we.sendKeys("Raju");
+		Thread.sleep(1500);
+		we.clear();
+		we.sendKeys("Raja P");
+		System.out.println(we.getText());
+		System.out.println(we.getAttribute("value"));
+		System.out.println(we.isDisplayed());
+		System.out.println(we.isEnabled());
+		WebElement radiobutton=we.findElement(By.xpath("//input[@value='Male']"));
+		System.out.println(radiobutton.isEnabled());
+		System.out.println(radiobutton.isSelected());
+		System.out.println(radiobutton.getTagName());
+		System.out.println(radiobutton.getSize());
+		System.out.println(radiobutton.getLocation());
+		
+		//Dropdown
+		WebElement we1=wd.findElement(By.id("Skills"));
+		System.out.println(we1.getText());
+		
+
+	}
+
+}

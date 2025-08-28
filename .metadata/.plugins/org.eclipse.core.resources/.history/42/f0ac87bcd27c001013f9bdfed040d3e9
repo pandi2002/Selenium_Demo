@@ -1,0 +1,18 @@
+package selenium_demo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Selenium_Registrationdemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver wd=new ChromeDriver();
+		wd.get("https://demo.automationtesting.in/Register.html");
+		wd.manage().window().maximize();
+		wd.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("Raja");
+		wd.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("Pandi");
+		}
+
+}

@@ -1,0 +1,22 @@
+package selenium_demo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Navigate_class {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver wdr=new ChromeDriver();
+//		String url=("https://Google.com");
+	    wdr.get("https://Google.com");
+		wdr.navigate().to("https://changepond.com");
+		Thread.sleep(5000);
+	    wdr.navigate().back();
+	    Thread.sleep(3000);
+	    wdr.navigate().forward();
+	    wdr.navigate().refresh();
+	    System.out.println(wdr.manage().window().getSize());
+	}
+
+}

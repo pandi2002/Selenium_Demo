@@ -1,0 +1,41 @@
+package testNG;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+
+public class parameterizationClass {
+	WebDriver driver;
+  @Test
+  public void login() {
+	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	  WebElement user=driver.findElement(By.id("idToken1"));
+	  user.click();
+	  user.sendKeys("Raja");
+	  WebElement pass=driver.findElement(By.id("idToken2"));
+	  pass.click();
+	  pass.sendKeys("1234");
+	  WebElement login=driver.findElement(By.xpath("//button[@type='submit']"));
+	  login.click();
+	  System.out.println(driver.getTitle());
+  }
+  @BeforeTest
+  public void beforeLogin() {
+	  driver=new ChromeDriver();
+	  driver.get("https://accounts.saucelabs.com/am/XUI/#login/");
+	  driver.manage().window().maximize();
+  }
+
+  @AfterTest
+  public void afterLogin() {
+	  driver.close();
+  }
+
+}

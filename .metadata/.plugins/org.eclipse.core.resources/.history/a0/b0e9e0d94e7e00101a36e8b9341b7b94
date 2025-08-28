@@ -1,0 +1,38 @@
+package testNG;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+
+public class Annotations {
+  @Test
+  public void login() {
+	  WebDriver driver=new ChromeDriver();
+	  driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+	  driver.manage().window().maximize();
+	  System.out.println(driver.getTitle());
+	  WebElement user=driver.findElement(By.name("username"));
+	  WebElement pass=driver.findElement(By.name("password"));
+	  user.click();
+	  user.sendKeys("Admin");
+	  pass.click();
+	  pass.sendKeys("admin123");
+	  WebElement login=driver.findElement(By.xpath("//button[@type='submit']"));
+	  login.click();
+	  System.out.println(driver.getTitle());
+	  
+  }
+  @BeforeTest
+  public void beforeTest() {
+  }
+
+  @AfterTest
+  public void afterTest() {
+  }
+
+}

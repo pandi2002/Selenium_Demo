@@ -1,0 +1,22 @@
+package testNG;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class ReadDatatFromPropertyFile {
+  @Test
+  public void f() throws Exception {
+	  FileReader fr=new FileReader("C:\\Users\\rajapandi.p\\Documents\\Selenium\\Selenium_TestNG\\src\\testNG\\data.properties");
+	  Properties pro=new Properties();
+	  pro.load(fr);
+	  WebDriver wd=new ChromeDriver();
+	  wd.get(pro.getProperty("url"));
+	  wd.get(pro.getProperty("Url"));
+	  
+  }
+}

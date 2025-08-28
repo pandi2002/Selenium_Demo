@@ -1,0 +1,53 @@
+package testNG;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class ParallelExecution {
+	WebDriver driver;
+	@Test(priority = 1)
+	public void loginchrome() {
+		driver=new ChromeDriver();
+		driver.get("https://ess.changepond.com/#/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		WebElement user=driver.findElement(By.id("empid"));
+		user.sendKeys("4724");
+		WebElement pass=driver.findElement(By.name("password"));
+		pass.sendKeys("142701");
+		WebElement login=driver.findElement(By.xpath("//button[@type='submit']"));
+		login.click();
+	}
+	@Test(priority = 3)
+	public void loginfirefox() {
+		driver=new FirefoxDriver(); 
+		driver.get("https://ess.changepond.com/#/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		WebElement user=driver.findElement(By.id("empid"));
+		user.sendKeys("4724");
+		WebElement pass=driver.findElement(By.name("password"));
+		pass.sendKeys("142701");
+		WebElement login=driver.findElement(By.xpath("//button[@type='submit']"));
+		login.click();
+	}
+	@Test(priority = 2)
+	public void loginedge() {
+		driver=new EdgeDriver();
+		driver.get("https://ess.changepond.com/#/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		WebElement user=driver.findElement(By.id("empid"));
+		user.click();
+		user.sendKeys("4724");
+		WebElement pass=driver.findElement(By.name("password"));
+		pass.click();
+		pass.sendKeys("142701");
+		WebElement login=driver.findElement(By.xpath("//button[@type='submit']"));
+		login.click();
+	}
+}

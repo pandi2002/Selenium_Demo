@@ -1,0 +1,30 @@
+package selenium_demo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Selenium_Task2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver wed=new ChromeDriver();
+		wed.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		Thread.sleep(2000);
+		WebElement wel=wed.findElement(By.name("username"));
+		wel.click();
+		wel.sendKeys("raj");
+		WebElement wel1=wed.findElement(By.name("password"));
+		wel1.click();
+		wel1.sendKeys("1234");
+		
+		WebElement wel3=wed.findElement(By.xpath("//button[@type='submit']"));
+		wel3.click();
+		Thread.sleep(5000);
+		WebElement wel4=wed.findElement(By.xpath("//p[text()='Invalid credentials']"));
+		System.out.println(wel3.getText());
+
+	}
+
+}

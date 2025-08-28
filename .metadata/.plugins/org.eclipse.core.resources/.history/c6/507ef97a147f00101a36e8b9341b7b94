@@ -1,0 +1,33 @@
+package testNG;
+
+import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.DataProvider;
+
+public class DataProviderDemo {
+  @Test(dataProvider = "dp")
+  public void log(String username, String password) {
+	  WebDriver driver=new ChromeDriver();
+	  driver.get("https://www.saucedemo.com/v1/");
+	  driver.manage().window().maximize();
+	  WebElement user=driver.findElement(By.id("user-name"));
+	  user.click();
+	  user.sendKeys(username);
+	  WebElement pwd=driver.findElement(By.id("password"));
+	  pwd.click();
+	  pwd.sendKeys(password);
+	  WebElement login=driver.findElement(By.id("login-button"));
+	  login.click();
+  }
+
+  @DataProvider
+  public Object[][] dp() {
+    return new Object[][] {
+      new Object[] { "standard_user", "secret_sauce" },
+      new Object[] { "Raja", "secret_sauce" },
+    };
+  }
+}

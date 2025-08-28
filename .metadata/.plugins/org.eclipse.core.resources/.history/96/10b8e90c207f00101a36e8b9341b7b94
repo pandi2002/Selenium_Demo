@@ -1,0 +1,56 @@
+package testNG;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
+
+public class crossBrowser {
+	WebDriver driver;
+	WebElement user=driver.findElement(By.id("empid"));
+	 WebElement pass=driver.findElement(By.name("password"));
+	 WebElement login=driver.findElement(By.xpath("//button[@type='submit']"));
+	@Parameters({"username","pwd","browser"})
+	@Test
+	public void actualTest(String username,String pwd,String browser) throws Exception {
+		
+		if (browser.equalsIgnoreCase("chrome")) {
+			 driver=new ChromeDriver();
+			 driver.get("https://ess.changepond.com/#/dashboard");
+			 user.click();
+			 pass.click();
+			 login.click();
+		}else if(browser.equalsIgnoreCase("firefox")) {
+			 driver=new FirefoxDriver();
+			 driver.get("https://ess.changepond.com/#/dashboard");
+			 user.click();
+			 pass.click();
+			 login.click();
+		}else if(browser.equalsIgnoreCase("edge")) {
+			 driver=new EdgeDriver();
+			 driver.get("https://ess.changepond.com/#/dashboard");
+			 user.click();
+			 pass.click();
+			 login.click();
+		}
+		else {
+			throw new Exception("Browser not found");
+		}
+		
+	}
+	@BeforeTest
+	public void beforeTest() {
+
+	}
+
+	@AfterTest
+	public void afterTest() {
+	}
+
+}

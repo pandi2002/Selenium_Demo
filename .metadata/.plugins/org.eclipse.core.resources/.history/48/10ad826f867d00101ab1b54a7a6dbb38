@@ -1,0 +1,21 @@
+package selenium_demo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Selenium_Task2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver wed=new ChromeDriver();
+		wed.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		WebElement wel=wed.findElement(By.name("username"));
+		wel.click();
+		WebElement wel1=wed.findElement(By.xpath("//button[@type='submit']"));
+		wel1.getText();
+
+	}
+
+}

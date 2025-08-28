@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="testNG.Annotation_BeforeAfter"/>
+      <class name="testNG.TestNGclass_1"/>
+      <class name="testNG.TestNG_Task1"/>
+      <class name="testNG.Priority_TestNG"/>
+      <class name="testNG.Annotations"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

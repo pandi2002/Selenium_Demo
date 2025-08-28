@@ -1,0 +1,56 @@
+package testNG;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+
+public class TestNG_Task1 {
+	WebDriver driver;
+  @Test(priority = 0)
+  public void validLogin() {
+	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	  System.out.println(driver.getTitle());
+	  WebElement user=driver.findElement(By.name("username"));
+	  user.click();
+	  user.sendKeys("Admin");
+	  WebElement pass=driver.findElement(By.name("password"));
+	  pass.click();
+	  pass.sendKeys("admin123");
+	  WebElement login=driver.findElement(By.xpath("//button[@type='submit']"));
+	  login.click();
+	  System.out.println(driver.getTitle());
+  }
+  @Test(priority = 1)
+  public void inValidLogin() {
+	  driver.navigate().back();
+	  WebElement user=driver.findElement(By.name("username"));
+	  user.click();
+	  user.sendKeys("Raja");
+	  WebElement pass=driver.findElement(By.name("password"));
+	  pass.click();
+	  pass.sendKeys("1234");
+	  WebElement login=driver.findElement(By.xpath("//button[@type='submit']"));
+	  login.click();
+	  System.out.println(driver.getTitle());
+  }
+
+  @BeforeTest
+  public void beforeLogin() {
+	  driver=new ChromeDriver();
+	  driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+	  driver.manage().window().maximize();
+  }
+
+  @AfterTest
+  public void afterLogin() {
+	  driver.close();
+  }
+
+}

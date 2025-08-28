@@ -1,0 +1,28 @@
+package selenium_demo;
+
+import java.awt.Desktop.Action;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Selenium_Rightclick {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver wel=new ChromeDriver();
+		wel.get("https://www.tutorialspoint.com/selenium/practice/login.php");
+		WebElement user=wel.findElement(By.id("email"));
+		Actions act=new Actions(wel);
+		
+		act.moveToElement(user).click().build().perform();
+		act.moveToElement(user).doubleClick().build().perform();
+		
+		
+		
+
+	}
+
+}

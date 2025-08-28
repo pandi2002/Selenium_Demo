@@ -1,0 +1,25 @@
+package selenium_demo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Selenium_Tabhandling {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver=new ChromeDriver();
+		String st=driver.getWindowHandle();
+		driver.get("https://ess.changepond.com/#/");
+		
+	    driver.switchTo().newWindow(WindowType.TAB);
+		
+	    String st1=driver.getWindowHandle();
+		driver.get("https://www.changepond.com/");
+		
+		driver.switchTo().window(st);
+		
+
+	}
+
+}

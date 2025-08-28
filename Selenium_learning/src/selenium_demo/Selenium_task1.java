@@ -1,0 +1,31 @@
+//open webBrowser and gmail an dcapture title and compared with welcome.
+//if equala means print pass otherwise failed........
+
+package selenium_demo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Selenium_task1 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver wd=new FirefoxDriver();
+		wd.manage().window().maximize();
+		String url=("https://www.gmail.com");
+		wd.get(url);
+		wd.manage().window().minimize();
+		String topic=wd.getTitle();
+		System.out.println(topic);
+		if(topic.equals("Gmail")) {
+			System.out.println("Pass");
+		}else {
+			System.out.println("Fail");
+		}
+		System.out.println(wd.getCurrentUrl());
+		Thread.sleep(5000);
+		wd.close();
+
+	}
+
+}

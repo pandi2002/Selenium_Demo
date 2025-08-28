@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-08-25T10:10:20 IST" name="Suite" finished-at="2025-08-25T10:10:32 IST" duration-ms="12540">
+    <groups>
+    </groups>
+    <test started-at="2025-08-25T10:10:20 IST" name="Test" finished-at="2025-08-25T10:10:32 IST" duration-ms="12540">
+      <class name="testNG.DemoBlazeTask">
+        <test-method is-config="true" signature="beforelogin()[pri:0, instance:testNG.DemoBlazeTask@3eb738bb]" started-at="2025-08-25T10:10:20 IST" name="beforelogin" finished-at="2025-08-25T10:10:30 IST" duration-ms="10219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforelogin -->
+        <test-method signature="login(java.lang.String,java.lang.String)[pri:0, instance:testNG.DemoBlazeTask@3eb738bb]" started-at="2025-08-25T10:10:30 IST" name="login" finished-at="2025-08-25T10:10:32 IST" duration-ms="1660" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Raja]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[142701]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="afterrlogin()[pri:0, instance:testNG.DemoBlazeTask@3eb738bb]" started-at="2025-08-25T10:10:32 IST" name="afterrlogin" finished-at="2025-08-25T10:10:32 IST" duration-ms="594" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterrlogin -->
+      </class> <!-- testNG.DemoBlazeTask -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

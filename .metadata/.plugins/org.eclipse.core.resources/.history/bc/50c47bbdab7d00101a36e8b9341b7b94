@@ -1,0 +1,39 @@
+package selenium_demo;
+
+import java.awt.Desktop.Action;
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Selenium_Rightclick {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver wel=new ChromeDriver();
+		wel.get("https://www.tutorialspoint.com/selenium/practice/login.php");
+		//Right click and Double click...........
+		WebElement user=wel.findElement(By.id("email"));
+//		Actions act=new Actions(wel);
+//		
+//		act.moveToElement(user).click().build().perform();
+//		act.contextClick(user).build().perform();
+//		user.sendKeys("Raja");
+//		act.moveToElement(user).doubleClick().build().perform();
+		
+		//Implicit wait....................................
+		
+		wel.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		user.sendKeys("Raja");
+		
+		//Explicity Wait...........................................
+		WebDriverWait ww=new WebDriverWait(wel,Duration.ofSeconds(5));
+		user.sendKeys("Raja");
+
+	}
+
+}

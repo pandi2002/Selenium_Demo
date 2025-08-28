@@ -1,0 +1,9 @@
+package testNG;
+
+import org.testng.annotations.Test;
+
+public class testNG_Group {
+  @Test
+  public void f() {
+  }
+}

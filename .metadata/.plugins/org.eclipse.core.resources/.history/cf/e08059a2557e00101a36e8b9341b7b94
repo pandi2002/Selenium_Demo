@@ -1,0 +1,29 @@
+package testNG;
+
+import org.testng.annotations.Test;
+
+public class Priority_TestNG {
+  @Test
+  public void first() {
+	  System.out.println("I am in First");
+  }
+  public void second() {
+	  System.out.println("I am in Second");
+  }
+  public void third() {
+	  System.out.println("I am in Third");
+  }
+  public void four() {
+	  System.out.println("I am in Four");
+  }
+  public void five() {
+	  System.out.println("I am in Five");
+  }
+  public void six() {
+	  System.out.println("I am in six");
+  }
+  public void f() {
+	  System.out.println();
+  }
+  
+}

@@ -1,0 +1,48 @@
+package testNG;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.AfterTest;
+
+public class paramterTask {
+	WebDriver driver;
+	@Parameters({"firstname","lastname","address","email","phone","skills"})
+  @Test
+  public void f(String firstname,String lastname,String address,String email,String phone,String skills) {
+	  WebElement user=driver.findElement(By.xpath("//input[@placeholder='First Name']"));
+	  user.click();
+	  user.sendKeys(firstname);
+	  WebElement user1=driver.findElement(By.xpath("//input[@placeholder='Last Name']"));
+	  user1.click();
+	  user1.sendKeys(lastname);
+	  WebElement detail=driver.findElement(By.xpath("//textarea[@ng-model='Adress']"));
+	  detail.click();
+	  detail.sendKeys(address);
+	  WebElement mail=driver.findElement(By.xpath("//input[@ng-model='EmailAdress']"));
+	  mail.click();
+	  mail.sendKeys(email);
+	  WebElement contact=driver.findElement(By.xpath("//input[@ng-model='Phone']"));
+	  contact.click();
+	  contact.sendKeys(phone);
+	  Select s=new Select(driver.findElement(By.id("Skills")));
+		s.selectByVisibleText(skills);
+  }
+  @BeforeTest
+  public void beforeLogin() {
+	  driver=new ChromeDriver();
+	  driver.get("https://demo.automationtesting.in/Register.html");
+	  driver.manage().window().maximize();
+  }
+
+  @AfterTest
+  public void afterTest() {
+//	  driver.close();
+  }
+
+}

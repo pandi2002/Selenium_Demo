@@ -1,0 +1,44 @@
+package testNG;
+
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+
+public class parameterizationClass {
+	WebDriver driver;
+  
+  @Parameters({"username","password"})
+  @Test
+  public void login(String username,String password) {
+	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	  WebElement user=driver.findElement(By.id("user-name"));
+	  user.click();
+	  user.sendKeys(username);
+	  WebElement pass=driver.findElement(By.id("password"));
+	  pass.click();
+	  pass.sendKeys(password);
+	  WebElement login=driver.findElement(By.xpath("//button[@type='submit']"));
+	  login.click();
+	  System.out.println(driver.getTitle());
+  }
+  @BeforeTest
+  public void beforeLogin() {
+	  driver=new ChromeDriver();
+	  driver.get("https://www.saucedemo.com/v1/");
+	  driver.manage().window().maximize();
+  }
+
+  @AfterTest
+  public void afterLogin() {
+	  driver.close();
+  }
+
+}

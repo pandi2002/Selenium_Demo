@@ -1,0 +1,33 @@
+package testNG;
+
+import org.testng.SkipException;
+import org.testng.annotations.Test;
+
+public class Priority_TestNG {
+  @Test(priority = 'c')
+  public void A() {
+	  throw new SkipException("Not completed");
+//	  System.out.println("I am in First");
+  }
+  @Test(priority = 'B')
+  public void B() {
+	  System.out.println("I am in Second");
+  }
+  @Test(enabled = false)
+  public void C() {
+	  System.out.println("I am in Third");
+  }
+  @Test(priority = 'A')
+  public void D() {
+	  System.out.println("I am in Four");
+  }
+  @Test(enabled = false)
+  public void E() {
+	  System.out.println("I am in Five");
+  }
+  @Test(priority = 'b')
+  public void F() {
+	  System.out.println("I am in six");
+  }
+  
+}

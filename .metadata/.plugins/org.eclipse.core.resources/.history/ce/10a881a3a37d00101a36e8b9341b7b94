@@ -1,0 +1,42 @@
+package selenium_demo;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Selenium_Task4 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver wd=new ChromeDriver();
+		String st=wd.getWindowHandle();
+		wd.get("https://ess.changepond.com/#/");
+		wd.switchTo().newWindow(WindowType.TAB);
+		Thread.sleep(1000);
+		String st1=wd.getWindowHandle();
+		wd.get("https://www.changepond.com/");
+		wd.switchTo().newWindow(WindowType.TAB);
+		Thread.sleep(1000);
+		String st2=wd.getWindowHandle();
+		wd.get("https://www.google.com/");
+		Thread.sleep(1000);
+		
+		
+		wd.switchTo().window(st);
+		Thread.sleep(1000);
+		wd.switchTo().window(st1);
+		Thread.sleep(1000);
+		wd.switchTo().window(st2);
+		Thread.sleep(1000);
+		wd.switchTo().window(st1);
+		Thread.sleep(1000);
+		wd.switchTo().window(st);
+		Thread.sleep(1000);
+		wd.switchTo().window(st2);
+		
+		
+		
+
+	}
+
+}

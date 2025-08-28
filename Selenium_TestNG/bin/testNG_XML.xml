@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="testNG.DemoBlazeTask"/>
+      <parameter name="user" value="Raja">
+      </parameter>
+      <parameter name="Password" value="142701">
+      </parameter>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
